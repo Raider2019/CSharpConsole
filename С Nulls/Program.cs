@@ -24,6 +24,7 @@ namespace С_Nulls
             ParseFromStrings();
             ParseFromStringsWithTryTypes();
             UseDatesAndTimes();
+            UseBigInteger();
             string[] theArgs = Environment.GetCommandLineArgs();
             foreach (string arg in theArgs)
             {
@@ -162,6 +163,19 @@ namespace С_Nulls
             Console.WriteLine(ts.Subtract(new TimeSpan(1, 10, 0)));
 
             Console.WriteLine();
+        }
+        static void UseBigInteger()
+        {
+            Console.WriteLine("***** Use BigInteger *****");
+            BigInteger biggy = BigInteger.Parse("999999999999999999999999999999999");
+            Console.WriteLine("Value of biggy is {0}", biggy);
+            Console.WriteLine("Is  biggy an value?: {0}", biggy.IsEven);
+            Console.WriteLine("Is biggy  a power of two?: {0}", biggy.IsPowerOfTwo);
+            BigInteger realyBig = BigInteger.Multiply(biggy, BigInteger.Parse("888888888888888888888888888888888"));
+            Console.WriteLine("Value of reallyBig is {0}", realyBig);
+            BigInteger reallyBig2 = biggy * realyBig;
+            Console.WriteLine("Value of realyBig2  is :{0}", reallyBig2);
+
         }
        
     }
