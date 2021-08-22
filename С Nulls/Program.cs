@@ -25,6 +25,10 @@ namespace С_Nulls
             ParseFromStringsWithTryTypes();
             UseDatesAndTimes();
             UseBigInteger();
+            DigitSeparators();
+            BinaryLiterals();
+            Console.WriteLine("**************** Work is Strings Date ********************");
+            BasicStringFunctionality();
             string[] theArgs = Environment.GetCommandLineArgs();
             foreach (string arg in theArgs)
             {
@@ -177,6 +181,40 @@ namespace С_Nulls
             Console.WriteLine("Value of realyBig2  is :{0}", reallyBig2);
 
         }
-       
+       static void DigitSeparators()
+        {
+            Console.WriteLine("***** Use Digit Separators *****");
+            Console.Write("Integer:");
+            Console.WriteLine(123_456);
+            Console.Write("Long:");
+            Console.WriteLine(123_456_789L);
+            Console.Write("Float:");
+            Console.WriteLine(123_456.1234F);
+            Console.Write("Decimal:");
+            Console.WriteLine(123_456.12M);
+            Console.WriteLine();
+
+        }
+       private static void BinaryLiterals()
+        {
+            Console.WriteLine("***** USE BINARY LITERALS *****");
+
+            Console.WriteLine("Sixteen: {0}", 0b0001_0000);
+            Console.WriteLine("Thirthy two: {0}", 0b0010_0000);
+            Console.WriteLine("Sixty four: {0}", 0b0100_0000);
+            Console.WriteLine("Sixty four: {0}", 0b0100_0000);
+            Console.WriteLine();
+        }
+        static void BasicStringFunctionality()
+        {
+            Console.WriteLine("***** Basic String functionality ******");
+            string firstName = "Freddy";
+            Console.WriteLine("Value of firstName: {0}", firstName);
+            Console.WriteLine("firstName Name has {0} characters.", firstName.Length);
+            Console.WriteLine("firstName in uppercase: {0}", firstName.ToUpper());
+            Console.WriteLine("firstName in lowercase: {0}.", firstName.ToLower());
+            Console.WriteLine("firstName contains the Letter a?: {0}.", firstName.Contains("a"));
+            Console.WriteLine("firstName after replace: {0}.", firstName.Replace("dy","yu"));
+        }
     }
 }
