@@ -29,6 +29,8 @@ namespace С_Nulls
             BinaryLiterals();
             Console.WriteLine("**************** Work is Strings Date ********************");
             BasicStringFunctionality();
+            SringConcatenations();
+            EscapeChars();
             string[] theArgs = Environment.GetCommandLineArgs();
             foreach (string arg in theArgs)
             {
@@ -215,6 +217,36 @@ namespace С_Nulls
             Console.WriteLine("firstName in lowercase: {0}.", firstName.ToLower());
             Console.WriteLine("firstName contains the Letter a?: {0}.", firstName.Contains("a"));
             Console.WriteLine("firstName after replace: {0}.", firstName.Replace("dy","yu"));
+            Console.WriteLine();
         }
+        static void SringConcatenations()
+        {
+            Console.WriteLine("***** String concatenation *****");
+            string s1 = "Programing the";
+            string s2 = "PsyhoDrill (PTP)";
+            string s3 = String.Concat(s1, s2);
+            Console.WriteLine(s3);
+            Console.WriteLine();
+
+        }
+        static void EscapeChars()
+        {
+            Console.WriteLine("***** Escape characters:\a");
+            string strWithTabs = "Model\tColor\tSpeed\tPet Name\a";
+            Console.WriteLine(strWithTabs);
+            Console.WriteLine("Everyone loves \"Hello World\"\a");
+            Console.WriteLine("C:\\MyApp\\bin\\Debug\\a");
+        
+            string myLongStrings = @"This is a very
+                very
+                    very
+                        long string";
+            Console.WriteLine( myLongStrings);
+            Console.WriteLine("All finished.\a");
+            Console.WriteLine();
+        }
+
+
+
     }
 }
