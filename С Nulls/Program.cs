@@ -31,6 +31,7 @@ namespace С_Nulls
             BasicStringFunctionality();
             SringConcatenations();
             EscapeChars();
+            StringEquality();
             string[] theArgs = Environment.GetCommandLineArgs();
             foreach (string arg in theArgs)
             {
@@ -225,7 +226,10 @@ namespace С_Nulls
             string s1 = "Programing the";
             string s2 = "PsyhoDrill (PTP)";
             string s3 = String.Concat(s1, s2);
+         
             Console.WriteLine(s3);
+           
+            Console.WriteLine(s3.Substring(0,s3.IndexOf("Ps")));
             Console.WriteLine();
 
         }
@@ -243,6 +247,26 @@ namespace С_Nulls
                         long string";
             Console.WriteLine( myLongStrings);
             Console.WriteLine("All finished.\a");
+            Console.WriteLine();
+        }
+        static void StringEquality()
+        {
+            Console.WriteLine("***** String equality *****");
+            string s1 = "Hello!";
+            string s2 = "Yo!";
+            Console.WriteLine("s1 = {0}", s1);
+            Console.WriteLine("s2 = {0}", s2);
+            Console.WriteLine();
+            Console.WriteLine("s1 == Hello!: {0}", s1 == "Hello!");
+            Console.WriteLine("s1 == HELLO!: {0}", s1 == "HELLO!");
+            Console.WriteLine("s1 == hello!: {0}", s1 == "hello");
+            Console.WriteLine("s1.Equals(s2): {0}", s1.Equals(s2));
+            Console.WriteLine("Yo.Equals(s2): {0}", "Yo!".Equals(s2));
+            Console.WriteLine("Yo.Equals(s2): {0}", s1.IndexOf("e"));
+
+        }
+        static void StringEqualitySpecifyingCompareRules()
+        {
             Console.WriteLine();
         }
 
