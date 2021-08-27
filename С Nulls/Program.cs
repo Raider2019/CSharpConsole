@@ -32,6 +32,8 @@ namespace С_Nulls
             SringConcatenations();
             EscapeChars();
             StringEquality();
+            StringEqualitySpecifyingCompareRules();
+            StringAreImmutable();
             string[] theArgs = Environment.GetCommandLineArgs();
             foreach (string arg in theArgs)
             {
@@ -267,7 +269,32 @@ namespace С_Nulls
         }
         static void StringEqualitySpecifyingCompareRules()
         {
+            Console.WriteLine("***** String equality (Case Insensitive: *****");
+            string s1 = "Hello!";
+            string s2 = "HELLO!";
+            Console.WriteLine("s1 = {0}", s1);
+            Console.WriteLine("s2 = {0}", s2);
             Console.WriteLine();
+            Console.WriteLine("Default rules: s1 = {0}, s2 = {1}s1.Equals(s2): {2}", s1,s2,s1.Equals(s2));
+            Console.WriteLine("Ignore case: s1.Equals(s2,StringComprasion.OrdinalIgnoreCase : {0}",
+                s1.Equals(s2, StringComparison.OrdinalIgnoreCase));
+            Console.WriteLine("Ignore case Invariant Culture: s1.Equals(s2,StringComprasion.InvariantCultureIgnoreCase : {0}",
+                s1.Equals(s2, StringComparison.InvariantCulture));
+            Console.WriteLine();
+            Console.WriteLine("Default rules: s1 = {0}, s2 = {1} s1.IndedOf(\"E\"): {2}", s1, s2, s1.IndexOf("E"));
+            Console.WriteLine("Ignore case: s1.IndexOf(\"E\",StringComprasion.OrdinalIgnoreCase) : {0}",
+                s1.Equals(s2, StringComparison.OrdinalIgnoreCase));
+            Console.WriteLine("Ignore case Invariant Culture:  s1.IndexOf(\"E\",StringComprasion.InvariantCultureIgnoreCase) : {0}",
+               s1.IndexOf("E", StringComparison.InvariantCulture));
+            Console.WriteLine();
+        }
+        static void StringAreImmutable()
+        {
+            string s1 = "This is my string.";
+            Console.WriteLine("s1 = {0}",s1);
+            string upperString = s1.ToUpper();
+            Console.WriteLine("upperString = {0}", upperString);
+            Console.WriteLine("s1 = {0}", s1);
         }
 
 
